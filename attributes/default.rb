@@ -20,6 +20,9 @@
 default['mimo']['repository'] = 'https://github.com/shutterfly/Mimo.git'
 default['mimo']['revision'] = 'master'
 default['mimo']['path'] = '/opt/mimo'
+default['mimo']['logfile'] = '/var/log/mimo.log'
+default['mimo']['user'] = 'mimo'
+
 
 default['mimo']['packages'] = [
   'build-essential',
