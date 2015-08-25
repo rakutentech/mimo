@@ -34,6 +34,12 @@ Chef cookbook for [Mimo][1].
     <td><tt>/opt/mimo</tt></td>
   </tr>
   <tr>
+    <td><tt>['mimo']['packages']</tt></td>
+    <td>Array</td>
+    <td>Packages to install</td>
+    <td><tt>['git']</tt></td>
+  </tr>
+  <tr>
     <td><tt>['mimo']['use_nodejs']</tt></td>
     <td>Boolean</td>
     <td>Use the `nodejs` cookbook for NodeJS/IO.js installation</td>

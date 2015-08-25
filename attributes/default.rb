@@ -25,6 +25,3 @@ default['mimo']['packages'] = [
   'git'
 ]
 default['mimo']['use_nodejs'] = true
-
-# default['mimo']['owner'] = 'root'
-# default['mimo']['group'] = 'root'
