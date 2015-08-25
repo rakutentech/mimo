@@ -22,6 +22,7 @@ default['mimo']['revision'] = 'master'
 default['mimo']['path'] = '/opt/mimo'
 
 default['mimo']['packages'] = [
+  'build-essential',
   'git'
 ]
 default['mimo']['use_nodejs'] = true

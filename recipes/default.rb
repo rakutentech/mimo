@@ -29,3 +29,8 @@ git node['mimo']['path'] do
   retries 5
   action :sync
 end
+
+nodejs_npm 'mimo' do
+  path node['mimo']['path']
+  json true
+end
