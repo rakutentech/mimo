@@ -32,5 +32,5 @@ end
 describe process('node') do
   it { should be_running }
   its(:user) { should eq 'mimo' }
-  its(:args) { should match /app\.js/ }
+  its(:args) { should match(/app\.js/) }
 end

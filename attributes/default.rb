@@ -23,7 +23,6 @@ default['mimo']['path'] = '/opt/mimo'
 default['mimo']['logfile'] = '/var/log/mimo.log'
 default['mimo']['user'] = 'mimo'
 
-
 default['mimo']['packages'] = [
   'build-essential',
   'git'
