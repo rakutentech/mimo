@@ -1,8 +1,8 @@
 #
 # Cookbook Name:: mimo
-# Recipe:: default
+# Attributes:: default
 #
-# Copyright (C) 2015 Rakuten, Inc.
+# Copyright (C) 2015 Rakuten Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,28 +17,14 @@
 # limitations under the License.
 #
 
-include_recipe 'nodejs::default' if node['mimo']['use_nodejs']
+default['mimo']['repository'] = 'https://github.com/shutterfly/Mimo.git'
+default['mimo']['revision'] = 'master'
+default['mimo']['path'] = '/opt/mimo'
+default['mimo']['logfile'] = '/var/log/mimo.log'
+default['mimo']['user'] = 'mimo'
 
-node['mimo']['packages'].each do |p|
-  package p
-end
-
-user node['mimo']['user'] do
-  comment 'Mimo user'
-  system true
-  action :create
-end
-
-git node['mimo']['path'] do
-  repository node['mimo']['repository']
-  revision node['mimo']['revision']
-  retries 5
-  action :sync
-end
-
-nodejs_npm 'mimo' do
-  path node['mimo']['path']
-  json true
-end
-
-include_recipe 'mimo::service'
+default['mimo']['packages'] = [
+  'build-essential',
+  'git'
+]
+default['mimo']['use_nodejs'] = true

@@ -17,28 +17,22 @@
 # limitations under the License.
 #
 
-include_recipe 'nodejs::default' if node['mimo']['use_nodejs']
-
-node['mimo']['packages'].each do |p|
-  package p
+service 'mimo' do
+  supports :restart => true
+  action :nothing
 end
 
-user node['mimo']['user'] do
-  comment 'Mimo user'
-  system true
-  action :create
+template '/etc/init/mimo.conf' do
+  source 'upstart.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  variables(
+    :app_name => 'mimo',
+    :logfile => node['mimo']['logfile'],
+    :path => node['mimo']['path'],
+    :username => node['mimo']['user'],
+    :node_env => node['mimo']['node_env']
+  )
+  notifies :restart, 'service[mimo]', :immediately
 end
-
-git node['mimo']['path'] do
-  repository node['mimo']['repository']
-  revision node['mimo']['revision']
-  retries 5
-  action :sync
-end
-
-nodejs_npm 'mimo' do
-  path node['mimo']['path']
-  json true
-end
-
-include_recipe 'mimo::service'
