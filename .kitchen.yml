@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  network:
+    - ['forwarded_port', {guest: 3000, host: 3000}]
 
 provisioner:
   name: chef_zero
