@@ -8,44 +8,13 @@ Chef cookbook for [Mimo][1].
 
 ## Attributes
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['mimo']['repository']</tt></td>
-    <td>String</td>
-    <td>Repository to pull from</td>
-    <td><tt>https://github.com/shutterfly/Mimo.git</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['mimo']['revision']</tt></td>
-    <td>String</td>
-    <td>Repository ref to use</td>
-    <td><tt>master</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['mimo']['path']</tt></td>
-    <td>String</td>
-    <td>Installation path</td>
-    <td><tt>/opt/mimo</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['mimo']['packages']</tt></td>
-    <td>Array</td>
-    <td>Packages to install</td>
-    <td><tt>['git']</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['mimo']['use_nodejs']</tt></td>
-    <td>Boolean</td>
-    <td>Use the `nodejs` cookbook for NodeJS/IO.js installation</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+| Key | Type | Description | Default |
+| --- | ---- | ----------- | ------- |
+| `['mimo']['repository']` | String | Repository to pull from | `https://github.com/shutterfly/Mimo.git` |
+| `['mimo']['revision']` | String | Repository ref to use | `master` |
+| `['mimo']['path']` | String | Installation path | `/opt/mimo` |
+| `['mimo']['packages']` | Array | Packages to install | `['git']` |
+| `['mimo']['use_nodejs']` | Boolean | Use the `nodejs` cookbook for NodeJS/IO.js installation | `true` |
 
 ## Usage
 
